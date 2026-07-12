@@ -12,6 +12,20 @@ services:
       retries: 20
       start_period: 5s
 
+  importer:
+    build:
+      context: ./database
+      dockerfile: Dockerfile.importer
+    environment:
+      SQLITE_FILE: /data/Chinook.db
+      DATABASE_URL: postgres://user:password@database:5432/database
+    volumes:
+      - ./database/Chinook.db:/data/Chinook.db:ro
+    restart: on-failure
+    depends_on:
+      database:
+        condition: service_healthy
+
   mcp-gateway:
     image: docker/mcp-gateway:latest
     use_api_socket: true
@@ -23,6 +37,9 @@ services:
       - --tools=execute_sql,list_tables,describe_table
     volumes:
       - ./mcp-config.yaml:/mcp-config.yaml:ro
+    depends_on:
+      importer:
+        condition: service_completed_successfully
 
   application:
     build:
@@ -43,3 +60,8 @@ services:
       timeout: 5s
       retries: 5
       start_period: 20s
+    depends_on:
+      importer:
+        condition: service_completed_successfully
+      mcp-gateway:
+        condition: service_started
