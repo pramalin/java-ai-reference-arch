@@ -23,3 +23,23 @@ services:
       - --tools=execute_sql,list_tables,describe_table
     volumes:
       - ./mcp-config.yaml:/mcp-config.yaml:ro
+
+  application:
+    build:
+      context: ./application
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8080/actuator/health/readiness"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
