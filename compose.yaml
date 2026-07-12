@@ -1,0 +1,25 @@
+services:
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U user -d database]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+
+  mcp-gateway:
+    image: docker/mcp-gateway:latest
+    use_api_socket: true
+    command:
+      - --transport=sse
+      - --allow-unauthenticated
+      - --config=/mcp-config.yaml
+      - --servers=database-server
+      - --tools=execute_sql,list_tables,describe_table
+    volumes:
+      - ./mcp-config.yaml:/mcp-config.yaml:ro
