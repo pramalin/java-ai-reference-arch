@@ -1,0 +1,7 @@
+spring:
+  ai:
+    mcp:
+      client:
+        enabled: false
+    model:
+    chat: none

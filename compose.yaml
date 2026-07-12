@@ -40,6 +40,16 @@ services:
     depends_on:
       importer:
         condition: service_completed_successfully
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget --spider --quiet http://localhost:8811/sse || exit 1"
+        ]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+      start_period: 5s
 
   application:
     build:
@@ -64,4 +74,4 @@ services:
       importer:
         condition: service_completed_successfully
       mcp-gateway:
-        condition: service_started
+        condition: service_healthy

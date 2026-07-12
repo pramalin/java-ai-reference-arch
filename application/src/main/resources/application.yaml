@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ai-reference
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: ${OPENAI_MODEL_NAME:gpt-4.1-mini}
+          temperature: 0
+
+    mcp:
+      client:
+        enabled: true
+        type: sync
+        sse:
+          connections:
+            database:
+              url: ${MCP_SERVER_URL:http://localhost:8811}
