@@ -1,0 +1,815 @@
+[+] Running 1/1
+/ model_runner ©)
+/ model_runner
+Attaching to agent-:
+database-1
+database-1
+database-1
+mcp_gateway
+mcp_gatewa:
+mcp_gateway-1
+database-1
+nown-Linux-gnu, compiled by
+database-1
+database-1
+database-1
+database-1
+database-1
+0.0s
+Attaching to agent-1, database-1, importer-1, mcp_gateway-1
+database-1 I
+database-1 | PostgreSQL Database directory appears to contain a database; Skipping initialization
+database-1 |
+mcp_gateway - Reading configuration...
+mcp_gateway-1 - Reading catalog from https: //desktop. docker. com/mcp/catalog/v2/catalog. yamt
+database-1 | 2025-06-25 10:54:43.502 UTC [1] LOG: starting PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on aarch64-unk
+nown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+database-1 | 2025-06-25 43.502 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+database-1 | 2025-06-25 43.502 UTC [1] LOG: listening on IPv6 address * port 5432
+database-1 | 2025-06-25 43.503 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+database-1 | 2025-06-25 10:54:43.505 UTC [29] LOG: database system was shut down at 2025-06-25 10:53:31 UTC
+|
+database-1
+2025-06-25 10:54:43.507 UTC [1] LOG: database system is ready to accept connections
+database-1, importer-1, mcp_gateway-1
+| PostgreSQL Database directory appears to contain a database; Skipping initialization
+= Reading configuration.
+- Reading configuration...
+- Reading catalog from https: //desktop. docker. com/mcp/catalog/v2/catalog. yamt
+2025-06-25 10:54:43,502
+2025-06-25 43.502
+2025-06-25 43.502
+2025-06-25 43.503
+2025-06-25 10:54:43,505
+2025-06-25 10:54:43,507
+= Configuration read in
+- Those servers are enabled:
+| 2025-06-25 10:54:43.502
+20:
+20:
+20:
+20:
+20:
+25-06-25 43.502
+25-06-25 43.502
+25-06-25 43.503
+25-06-25 10:54:43.505,
+25-06-25 10:54:43,507
+Configuration read in
+Those servers are enabled:
+Using images:
+uTC
+gcc (Debian 12.2
+UTC
+uTC
+uTC
+uTC
+UTC
+212
+(1) Loc:
+starting PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on aarch64—unk
++0-14) 12.2.0, 64-bit
+[1] Los:
+(1] Los:
+[1] Los:
+[29] Los:
+[1] Los:
+[29] Loc:
+[1] Los:
+-561708ms
+postgres
+Listening on IPv4 address "0.0.0.0", port 5432
+listening on IPv6 address " port 5432
+Listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+database system was shut down at 2025-06-25 10:53:31 UTC
+database system is ready to accept connections
+- mcp/postgres@sha256: b72cO8f19e864b3e8beeabe90d048b9271924e704113345a2968316d1e95a8T0
+v
+= mcp/postgres@sha256:b72c08f19e864b3e8beea8e90d048b9271924e704113345a29683 f6d1e95a8f0
+Pulling images [mcp/postgres]
+Images pulled in 3.363583ms
+Verifying images [mcp/postgres]
+database I 4:43.507 UTC [1] LOG: database system is ready to accept connections
+1 2025-06-25 1
+ay-1 - Configuration read in 212.561708ms
+ay = Those servers are enabled: postgres
+»y-1 | = Using images:
+ay~ = mcp/postgres@sha256: b72c08f19e864b3e8beea8e90d048b9271924e704113345a29683f6d1e95a8T0
+ay~ = mcp/postgres@sha256: b72c08f19e864b3e8beea8e90d048b9271924e704113345a29683f6d1e95a8 FO
+= Pulling images [mcp/postgres]
+y-. | > Images pulled in 3.363583ms
+= Verifying images {mcp/postgres]
+1 > Images verified in 1.314203084s
+= Listing MCP tools...
+= Running server mcp/postgres with [run --rm init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+jorter-1 _
+4 0.2855
+orter-t COPY Threads Completion @
+il Create Indexes e 22 0.0295
+ter-1 Index Build Completion ° 22 0.0995
+er-1 Reset Sequences e v7) 0.0205
+orter-1 Primary Keys C) 11 0.0055
+orter-1 Create Foreign Keys @ 11 0.0085
+importer-1 Create Triggers 0 t) 0.000s
+porter-1 Install Comments C) e 0.0005
+jorter-1
+orter-1 Total import time
+jorter-1 exited 1 code @
+mcp_gateway-1 = Scanning tool call arguments for secrets.
+orter-1 Total import time ‘ 15607 394.5 kB 0.446s
+jorter-1 exited with code @
+mcp_gateway-1 - Scanning tool call arguments for secrets
+teway >No secret found in arguments.
+mcp_gatewa’ - Calling tool query with arguments: {"sql":"SELECT table_name FROM information_schema.tables WHERE tab
+ay- >No secret found in arguments.
+mcp_gat = Calling tool query with arguments: {"sqU
+le_schema = 'public';"}
+le_schema = ‘public
+mcp_gateway = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —label docker-mcp=true label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+mcp_gateway— >No secret found in response.
+mcp_gateway = Scanning tool call arguments for secrets...
+mcp_gateway-1 >No secret found in arguments.
+teway = Calling tool query with arguments: {"sqU’
+mns WHERE table_name = ‘invoice’;
+mcp_gateway- >No secret found in arguments.
+mcp_gateway = Calling tool query with arguments: {"sql
+mns WHERE table_name = ‘customer';"}
+mcp_gat = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+mi eway- = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges —-cpus 1 —-me
+mory 2Gb ~-pull never --label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user: password@host.docker. internal:5432/database]
+mcp_gateway > Calling tool query took: 186.2045ms
+1 = Scanning tool call response for secrets...
+>No secret found in response.
+= Scanning tool call arguments for secrets...
+y-1 >No secret found in arguments.
+x = Calling tool query with arguments: {"sql"':"SELECT e. firstname, e. lastname, SUM(i.total) AS total_sale
+s FROM employee e JOIN customer c ON e.employeeid = c.supportrepid JOIN invoice i ON c.customerid .customerid WHERE E
+XTRACT(YEAR FROM i.invoicedate) = 2009 AND e.title = 'Sales Agent’ GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+D “1 = Running server mcp/postgres with [run --rm -i —-init --security-opt no-new-privileges —-cpus 1 —-me
+mory 2Gb --pull never —label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+mcp_gateway > Calling tool query took: 186.2045ms
+- Scanning tool call response for secrets...
+>No secret found in response.
+- Scanning tool call arguments for secrets...
+>No secret found in arguments.
+mcp_gateway = Calling tool query with arguments: {"sql":"SELECT e.firstname, e. lastname, SUM(i.total) AS total_sale
+s FROM employee e JOIN customer c ON e.employeeid = c.supportrepid JOIN invoice i ON c.customerid = i.customerid WHERE E
+XTRACT(YEAR FROM i.invoicedate) = 2009 AND e.title = ‘Sales Agent’ GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+13")
+‘SELECT column_name, data_type FROM information_schema.colu
+mcp_gateway- = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges —-cpus 1 —-me
+mory 2Gb --pull never —label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user: password@host.docker. internal:5432/database]
+Images verified in 1.314203084s
+Listing MCP tools...
+= Running server mcp/postgres with [run --rm
+init --security-opt no-new-privileges --cpus 1 --me
+table name errors rows bytes total time
+-000s
+fetch
+il e v) 0
+fetch meta data e 44 0.0285
+orter-1 Create Schemas e v7) 0.0005
+Create SQL Types e e 0.0035
+Create tables e 22 0.0195
+il Set Table OIDs e 11 0.0035
+jorter-1 artist +0345
+C) +8 KB 0
+album ® 347 10.5 kB 0.0345
+customer e 59 6.7 kB 0.116s
+album e 347 10.5 kB 0.0345
+customer t) 59 6.7 kB 0.116s
+i employee e 8 1.4 kB 0.0455
+r-1 genre C) 25 0.3 kB 0.1575
+jorter-1 invoiceline e 2240 © 43.6 kB 0.1775
+invoice C) 412 31.0 kB 0.155s
+invoice e 412 31.0 kB 0.155s
+mediatype o 5 @.1 kB 0.1705
+i playlisttrack e 8715 57.3 kB 0.2658
+i playlisttrack e 8715 57.3 KB 0.2655
+r-1 playlist C) 18 0.3 kB 0.2505
+jorter-1 track C) 3503 236.5 KB 0.2715
+orter-1
+orter-t COPY Threads Completion @ 4 0.2855
+orter-t COPY Threads Completion e 4 0.2855
+i Create Indexes o 22 0.0295
+Index Build Completion e 22 0.0995
+Index Build Completion t) 22 0.0995
+orter-1 Reset Sequences 0 0 0.0205
+orter-1 Primary Keys C) 11 0.005s
+orter-t Create Foreign Keys @ 11 0.0085
+orter-1 Primary Keys C) 11 0.0055
+orter=1 Create Foreign Keys e 11 0.0085
+i Create Triggers o o 0.0005
+r-1 Install Comments C) o 0.0005
+r-1 Install Comments t) o 0.0005
+orter-1 - — — —
+orter-1 Total import time ’ 15607 394.5 kB 0.446s
+jorter-1 exited with code @
+gateway-1 = Scanning tool call arguments for secrets...
+7 >No secret found in arguments.
+mcp_gat 1 | = Calling tool query with arguments: {"sql
+le_schema = 'public';"}
+mns WHERE table_name = ‘employee';"}
+mcp_gateway > Calling tool query took: 184.002625ms
+> Calling tool query took: 184.002625ms
+= Scanning tool call response for secrets...
+>No secret found in response.
+= Scanning tool call arguments for secrets...
+>No secret found in arguments.
+= Calling tool query with arguments: {"sql":"SELECT DISTINCT title FROM employee; "}
+1 = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 —-me
+mory 2Gb --pull never label docker-mcp=true label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+docker-mep-transport=stdio -e POSTGRES_URL] and command [postgres: //user:password@host.docker. internal:5432/database]
+geteway-1 | > Calling tool query took: 157.060834ms
+teway = Scanning tool call response for secrets...
+mcp_gateway-1 >No secret found in response.
+eway- = Scanning tool call arguments for secrets...
+mcp_gat >No secret found in arguments.
+ncp_gateway-1 | = Calling tool query with arguments: {"sql":"SELECT e. firstname, e. lastname, SUM(i.total) AS total_sale
+s FROM employee e JOIN customer c ON e-employeeid = c.supportrepid JOIN invoice i ON c.customerid = i.customerid WHERE E
+XTRACT(YEAR FROM i.invoicedate) = 2009 AND e.title ILIKE 'Sales%' GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+ag
+mcp_gat = Running server mcp/postgres with [run --rm init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —label docker-mcp=true label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+mcp_gateway- = Scanning tool call arguments for secrets.
+mcp_gateway >No secret found in arguments.
+ncp_gateway-1 | = Calling tool query with arguments: {"sql":"SELECT column_name, data_type FROM information_schema.colu
+mns WHERE table_name = 'employee';"}
+mcp_gateway-1 - Running server mcp/postgres with [run --rm -i init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+docker-mep-transport=stdio -e POSTGRES_URL] and command [postgres: //user:password@host..docker. internal:5432/database]
+ncp_gateway-1 | > Calling tool query took: 149.1825ms
+mcp_gateway > Calling tool query took: 148.141625ms
+mcp_gateway-1 = Scanning tool call response for secrets...
+mcp_gateway— >No secret found in response.
+mcp_gateway = Scanning tool call arguments for secrets...
+mcp_gateway-1 >No secret found in arguments.
+"SELECT column_name, data_type FROM information_schema.colu
+mcp_gateway = Calling tool query with arguments: {"sql":"SELECT column_name, datatype FROM information_schema.colu
+mns WHERE table_name = ‘customer';"}
+mcp_gateway- = Running server mcp/postgres with [run —-rm -i --init --security-opt no-new-privileges —-cpus 1 —-me
+mory 2Gb --pull never —label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user: password@host.docker. internal:5432/database]
+mcp_gateway > Calling tool query took: 186.2045ms
+mcp_gateway-1 = Scanning tool call response for secrets...
+mcp_gateway— >No secret found in response.
+mcp_gateway = Scanning tool call arguments for secrets...
+mcp_gateway-1 >No secret found in arguments.
+teway = Calling tool query with arguments: {"sql"': "SELECT e.firstname, e. lastname, SUM(i.total) AS total_sale
+s FROM employee e JOIN customer c ON e.employeeid = c.supportrepid JOIN invoice i ON c.customerid = i.customerid WHERE E
+XTRACT(YEAR FROM i.invoicedate) = 2009 AND e.title = 'Sales Agent’ GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+1;"}
+mcp_gat = Running server mcp/postgres with [run --rm -i —-init --security-opt no-new-privileges —-cpus 1 —-me
+mns WHERE table_name = ‘invoice!
+mcp_gateway-1 = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges —-cpus 1 —-me
+mory 2Gb --pull never —label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+ncp_gateway-1 | > Calling tool query took: 184.002625ms
+ncp_gateway-1 | > Calling tool query took: 148.141625ms
+mcp_gateway = Scanning tool call response for secrets...
+mcp_gateway-1 >No secret found in response.
+mcp_gateway- = Scanning tool call arguments for secrets.
+mcp_gateway >No secret found in arguments.
+>No secret found in response.
+mcp_gateway = Scanning tool call arguments for secrets.
+me gateway-1 > No secret found in arguments.
+ncp_gateway-1 | = Calling tool query with arguments: {"sql":"SELECT column_name, data_type FROM information_schema.colu
+mns WHERE table_name = ‘invoice’
+mcp_gateway-1 - Running server mcp/postgres with [run —-rm -i init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never --label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+mns WHERE table_name = ‘customer';"}
+mcp_gateway-1 = Running server mcp/postgres with [run --rm -i --init —-security-opt no-new-privileges —-cpus 1 —-me
+mory 2Gb --pull never —label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+ncp_gateway-1 | > Calling tool query took: 186.2045ms
+mcp_gateway = Scanning tool call response for secrets...
+mcp_gateway-~ >No secret found in response.
+mcp_gateway = Scanning tool call arguments for secrets.
+mcp_gateway-1 >No secret found in arguments.
+ncp_gateway-1 | = Calling tool query with arguments: {"sql":"SELECT e.firstname, e.lastname, SUM(i.total) AS total_sale
+s FROM employee e JOIN customer c ON e.employeeid = c.supportrepid JOIN invoice i ON c.customerid = i.customerid WHERE E
+XTRACT(YEAR FROM i.invoicedate) = 2009 AND e.title = 'Sales Agent' GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+"}
+mcp_gateway-1 = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 —-me
+mory 2Gb --pull never —label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+docker-mep-transport=stdio -e POSTGRES_URL] and command [postgres: //user:password@host.docker. internal:5432/database]
+mory 2Gb —pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp label docker-mcp-name=postgres —label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+me gateway-1 > Calling tool query took: 149.1825ms
+y- Scanning tool call response for secrets...
+No secret found in response.
+Scanning tool call arguments for secrets...
+y >No secret found in arguments.
+1 | = Calling tool query with arguments: {"sql
+mns WHERE table_name = 'invoice';"}
+mcp_gateway = Running server mcp/postgres with [run --rm init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb —pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp label docker-mcp-name=postgres —label
+docker-mep-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+ncp_gateway-1 | > Calling tool query took: 163.258167ms
+me gateway-1 > Calling tool query took: 148.141625ms
+y- Scanning tool call response for secrets...
+No secret found in response.
+Scanning tool call arguments for secrets...
+y >No secret found in arguments.
+1 | = Calling tool query with arguments: {"sqU
+mns WHERE table_name = ‘customer';"}
+mcp_gat = Running server mcp/postgres with [run --rm init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb —pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp label docker-mcp-name=postgres —label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+me gat ay-1 > Calling tool query took: 186.2045ms
+= Running server mcp/postgres with [run --rm init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —label docker-mcp=true label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user:password@host.docker. internal:5432/database]
+me gat ay-1 > Calling tool query took: 157.060834ms
+Scanning tool call response for secrets...
+No secret found in response.
+y-1 Scanning tool call arguments for secrets...
+y >No secret found in arguments.
+1 | = Calling tool query with arguments: {"sql
+ycp_gateway-1 | > Calling tool query took: 163.258167ms
+mcp_gateway- = Scanning tool call response for secrets...
+Scanning tool call arguments for secrets...
+>No secret found in arguments.
+1 - Calling tool query with arguments: {"sql SELECT e. firstname, e.lastname, SUM(i.total) AS total_sale
+s FROM employee e JOIN customer c ON e.employeeid = c.supportrepid JOIN invoice i ON c.customerid = i.customerid WHERE E
+XTRACT(YEAR FROM i. invoicedate) = 2009 AND e.title = ‘Sales Agent’ GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+1;"}
+mcp_gat = Running server mcp/postgres with [run —-rm -i —init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb ~-pull never ~-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user:password@host.docker. internal:5432/database]
+mcp_gat > Calling tool query took: 184.002625ms
+gateway = Scanning tool call response for secrets...
+XTRACT(YEAR FROM i.invoicedate) = 2009 AND e,title ILIKE 'Sales%' GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+13;"}
+mcp_gat = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb ~-pull never --label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user: password@host.docker. internal:5432/database]
+mcp_gat > Calling tool query took: 151.864333ms
+gateway - Scanning tool call response for secrets...
+mcp_gateway >No secret found in response.
+mcp_gateway-1 = Scanning tool call arguments for secrets.
+mcp_gateway-1 - Scanning tool call arguments for secrets
+teway >No secret found in arguments.
+ncp_gateway-1 | = Calling tool query with arguments: {"sql":"SELECT column_name, data_type FROM information_schema.colu
+mns WHERE table_name = ‘employee! ;"}
+mcp_gateway = Scanning tool call arguments for secrets...
+mé gat ay-1 > No secret found in arguments.
+nep_gateway-1 | = Calling tool query with arguments: {"sqU":"SELECT DISTINCT title FROM employe:
+mcp_gateway = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb —pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+mcp_gat = Running server mcp/postgres with [run —-rm -i —init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb ~-pull never --label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+ncp_gateway-1 | > Calling tool query took: 149.1825ms
+mcp_gateway- = Scanning tool call response for secrets...
+mcp_gateway >No secret found in response.
+mcp_gateway-1 - Scanning tool call arguments for secrets
+teway >No secret found in arguments.
+me gat ay-1 - Calling tool query with arguments: {"sql":"SELECT column_name, data_type FROM information_schema.colu
+mns WHERE table_name = ‘employee';"}
+mcp_gat = Running server mcp/postgres with [run --rm init --security-opt no-new-privileges --cpus 1 —-me
+mns WHERE table_name = ‘invoice’
+mcp_gateway = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —label docker-mcp=true label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+mory 2Gb --pull never —label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+docker-mep-transport=stdio -e POSTGRES_URL] and command [postgres: //user: password@host.docker. internal:5432/database]
++ pgloader /app/Chinook.db postgres: //user: password@database:5432/database
+orter-1
+jorter-1 + pgloader /app/Chinook.db postgres: //user: password@database:5432/database
+> postgres: (1 tools) (11 resources)
+> 1 tools listed in 210,968459ns
+> Initialized in 1.743527168s
+> Start sse server on port 8811
+2025-06-25T10:54:45.006000Z LOG pgloader version "3.6.
+2025-06-25110:54:45.048000Z LOG Migrating from #<SQLITE-CONNECTION sqlite: ///app/Chinook.db {1006A346A3
+importer-1 2025-06-25710:54:45.048000Z LOG Migrating into #<PGSQL-CONNECTION pgsql://user@database:5432/database {
+2025-06-25T1 45.006000Z LOG pgloader version "3.6.9"
+2025-06-25T11 45.048000Z LOG Migrating from #<SQLITE-CONNECTION sqlite:///app/Chinook.db {1006A346A3
+orter-1 2025-06-25T10:54:45.048000Z LOG Migrating into #<PGSQL-CONNECTION pgsql://user@database:5432/database {
+2025-06-25710:54:45.048000Z LOG Migrating from #<SQLITE-CONNECTION sqlite: ///app/Chinook.db {1006A346A3
+jorter-1 2025-06-25T10:54:45.048000Z LOG Migrating into #<PGSQL-CONNECTION pgsql://user@database:5432/database {
+1006ADFFC3}>
+er-1 2025-06-25T10:54:45.589000Z LOG report summary reset
+rl table name errors rows bytes total time
+jorter-1 =
+orter-1 fetch
+0.
+orter-1 2025-06-25T10:54:45.589000Z LOG report summary reset
+er-1 table name errors rows bytes total time
+rt -
+jorter-1 fetch
++0005
+0
+orter-1 fetch meta data 0.0285
+il Create Schemas 0.0005
+Create SQL Types 0.0035
+orter-1 Create tables 0.0195
+Set Table OIDs 0.
+il artist 6.8 kB 0
+r-1 album 10.5 kB 0.0345
+orter-1 customer 6.7 kB @.116s
+employee 1.4 kB 0.0455
+genre 0.3 kB 0.1575
+il invoiceline 43.6 kB 0.1775
+r-1 invoice 31.0 kB 0.155s
+jorter-1 mediatype 0.1 kB 0.170s
+playlisttrack 57.3 kB 0.2655
+playlist 0.3 kB 0.250s
+il track 236.5 kB @.271s
+orter-1 COPY Threads Completion a
+orter-1 Create Indexes 22 0.0295
+orter-t Index Build Completion 22 0.0995
+il Reset Sequences v7) 0.0205
+r-1 Primary Keys 11 0.0055
+orter-1 Create Foreign Keys 1 0.0085
+Create Triggers 0 0.0005
+Install Conments 0 0.
+Total import time ‘ 15607 394.5 kB
+orter-1 Create Schemas 0.0005
+i Create SQL Types 0.0035
+Create tables 0.019s
+orter-1 Set Table OIDs 0.0035
+artist e 275° 6.8 kB 0.0345
+il album e 347 10.5 kB 0.0345
+customer e 59° «6.7 kB 0.116s
+orter-1 employee 0 8 1.4 kB 0.0455
+genre e 0.3 kB 0.1575
+invoiceline @ 43.6 kB 0.1775
+il invoice e 31.0 kB @.155s
+mediatype e 0.1 kB 0.170s
+orter-1 playlisttrack e 57.3 kB 0.2655
+playlist t) 0.3 kB 0.250s
+@ 5 kB 0.2715
+track
+fetch meta data C) 44 0.0285
+Create Schemas () e 0.0005
+i Create SQL Types C 0 0.0035
+r-1 Create tables C) 22 0.0195
+jorter-1 Set Table OIDs e n 0.0035
+artist 275° 6.8 kB 0.0345
+il album 347 10.5 kB 0.0345
+customer 59° «6.7 kB 0.116s
+jorter-1 employee 8 1.4 kB 0.0455
+genre 25 0.3 kB 0.1575
+invoiceline 2240 43.6 kB 0.1775
+invoiceline 2240 43.6 KB 0.1775
+il invoice 412 31.0 kB @.155s
+mediatype 5 0.1 kB 0.170s
+mediatype 5 0.1 kB 0.170
+orter-1 playlisttrack 8715 57.3 kB 0.2655
+playlist 18 0.3 kB 0.250s
+5 kB 0.2715
+track 3503
+playlist 3 0.2505
+5 0
+track +2718
++2855
+esessee0! sese000
+COPY Threads Completion )
+orter-1 Create Indexes 0.0295
+COPY Threads Completion o
+jorter-1 Create Indexes 0.0295
+orter-1 Index Build Completion 0.0995
+Reset Sequences 0.020s
+i Primary Keys 0.005s
+Create Foreign Keys 0.0085
+orter-1 Create Triggers 0.0005
+Install Comments )
+orter-1 Index Build Completion 0.099s
+Reset Sequences 0 0.020s
+i Primary Keys 11 0.005s
+Create Foreign Keys 11 0.0085
+orter-1 Create Triggers 0 0. 000s
+Install Comments 0 t)
+-000s
+orter-1 Create Triggers 0. 000s
+Install Comments t)
+Index Build Completion C) 22 0.0995
+Reset Sequences @ 0 0.020s
+i Primary Keys e 11 0.005s
+Create Foreign Keys ° 11 0.0085
+Create Triggers e 0 0. 000s
+Install Comments ° 0 )
++0005
+Total import time
+394.5 kB
+‘SELECT table_name FROM information_schema.tables WHERE tab
+r-1 exited with code 0
+r-1 exited wit le 0
+mcp_gateway-1 - Scanning tool call arguments for secrets...
+r-1 exited wit ie 0
+mcp_gateway-1 = Scanning tool call arguments for secrets...
+eway- >No secret found in arguments.
+= Calling tool query with arguments: {"sql
+mcp_gateway = Calling tool query with arguments: {"sqU
+le_schema = 'public';"}
+mcp_gateway = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 —-me
+mory 2Gb pull never --label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user: password@host.docker. internal: 5432/database]
+me gat ay-1 > Calling tool query took: 149.1825ms
+mory 2Gb —pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp label docker-mcp-name=postgres —label
+docker-mep-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+ncp_gateway-1 | > Calling tool query took: 148.141625ms
+> Calling tool query took: 163.258167ms
+= Scanning tool call response for secrets...
+>No secret found in response.
+- Scanning tool call arguments for secrets...
+= Scanning tool call arguments for secrets...
+>No secret found in arguments.
+me gat ay-1 - Calling tool query with arguments: {"sql":"SELECT column_name, data_type FROM information_schema.colu
+mns WHERE table_name = ‘invoice’
+mcp_gateway = Scanning tool call response for secrets...
+mcp_gateway-1 >No secret found in response.
+mcp_gateway- = Scanning tool call arguments for secrets.
+mcp_gateway >No secret found in arguments.
+ncp_gateway-1 | = Calling tool query with arguments: {"sql":"SELECT column_name, data_type FROM information_schema.colu
+mns WHERE table_name = ‘customer’ ;"}
+mcp_gateway-1 - Running server mcp/postgres with [run --rm -i init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb —pull never —-label docker-mcp=true —-label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+docker-mep-transport=stdio -e POSTGRES_URL] and command [postgres: //user:password@host.docker. internal:5432/database]
+ncp_gateway-1 | > Calling tool query took: 186.2045ms
+nicp_gateway-1 | > Calling tool query took: 184.002625ms
+mcp_gateway = Scanning tool call response for secrets...
+ay-1 > No secret found in response.
+mcp_gateway— = Scanning tool call arguments for secrets...
+fay >No secret found in arguments.
+ncp_gateway-1 | = Calling tool query with arguments: {"sql":"SELECT e. firstname, e.lastname, SUM(i.total) AS total_sale
+s FROM employee e JOIN customer c ON e.employeeid = c.supportrepid JOIN invoice i ON c.customerid = i.customerid WHERE E
+XTRACT(YEAR FROM i.invoicedate) = 2009 AND e.title = 'Sales Agent' GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+"}
+mcp_gateway = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+mcp_gateway = Running server mcp/postgres with [run —-rm -i —init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb ~-pull never ~-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres label
+mory 2Gb --pull never —label docker-mcp=true label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —-label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+> Calling tool query took: 163.258167ms
+gateway-1 = Scanning tool call response for secrets...
+y-1 - Scanning tool call response for secrets...
+= Calling tool query with arguments: {"sqU
+mns WHERE table_name = 'employee';"}
+mcp_gat = Running server mcp/postgres with [run —-rm -i —init --security-opt no-new-privileges --cpus 1 --me
+»y-1 | = Calling tool query with arguments: {"sql":"SELECT DISTINCT title FROM employee;"}
+ay - Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb ~-pull never --label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user:password@host..docker. internal:5432/database]
+> Calling tool query took: 149.1825ms
+- Scanning tool call response for secrets...
+>No secret found in response.
+1 - Scanning tool call arguments for secrets...
+1 = Scanning tool call arguments for secrets...
+>No secret found in arguments.
+= Calling tool query with arguments: {"sql
+= Calling tool query with arguments: {"sqU
+mns WHERE table_name = 'employee';"}
+mcp_gat = Running server mcp/postgres with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+mcp_gat = Running server mcp/postgres with [run —-rm -i —init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb pull never ~-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+> Calling tool query took: 149.1825ms
+gateway-1 - Scanning tool call response for secrets...
+- Scanning tool call response for secrets...
+>No secret found in response.
+1 = Scanning tool call arguments for secrets...
+- Scanning tool call arguments for secrets...
+>No secret found in arguments.
+= Calling tool query with arguments: {"sqU
+mns WHERE table_name = 'invoice';"}
+mcp_gat = Running server mcp/postgres with [run —-rm -i —init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb ~-pull never ~-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres label
+mory 2Gb --pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+> Calling tool query took: 148.141625ms
+- Scanning tool call response for secrets...
+>No secret found in response.
+1 - Scanning tool call arguments for secrets...
+>No secret found in arguments.
+= Calling tool query with arguments: {"sqU
+mns WHERE table_name = ‘customer';"}
+mcp_gat = Running server mcp/postgres with [run —-rm -i —init --security-opt no-new-privileges --cpus 1 --me
+mory 2Gb --pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres --label
+docker-mcp-transport=stdio -e POSTGRES_URL] and command [postgres: //user:password@host.docker. internal:5432/database]
+mcp_gat > Calling tool query took: 186.2045ms
+gateway~ - Scanning tool call response for secrets...
+mcp_gateway > Calling tool query took: 157.060834ns
+mcp_gateway-1 - Scanning tool call response for secrets...
+mcp_gateway >No secret found in response.
+394.5 kB 0.446s
+mcp_gat SELECT table_name FROM information_schema.tables WHERE tab
+v
+SELECT table_name FROM information_schema.tables WHERE tab
+‘SELECT column_name, data_type FROM information_schema.colu
+mory 2Gb --pull never —label docker-mcp=true label docker-mcp-tool-type=mcp --label docker-mcp-name=postgres —label
+mory 2Gb —pull never —-label docker-mcp=true --label docker-mcp-tool-type=mcp label docker-mcp-name=postgres —label
+docker-mep-transport=stdio -e POSTGRES_URL] and command [postgres://user:password@host.docker. internal:5432/database]
+15607 394.5 kB 0.4465
+’
+‘SELECT column_name, data_type FROM information_schema.colu
+‘SELECT column_name, data_type FROM information_schema.colu
+SELECT column_name, data_type FROM information_schema.colu
+v
+SELECT column_name, data_type FROM information_schema.colu
+v
+agent-1 | "firstname": "Steve",
+agent-1 | lastname": "Johnson",
+agent-1 | “total_sales": "164.34"
+agent-1 | +
+agent-1 11
+agent-1 I Ai Message
+agent-1 I
+agent-1 I
+e.employeeid = c.supportrepid JOIN invoice i ON c.customerid
+09 AND e,title ILIKE 'Sales%' GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+agent-1 |
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+e.employeeid = c.supportrepid JOIN invoice i ON c.customerid
+09 AND e,title ILIKE 'Sales%' GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+{
+“tool_calls": []
++
+Tool Calls:
+query (8LpV@qXnA9sZtRfYwE7hT2mNcB4dF6g)
+Call ID: SLpVOgXnA9sZtRFYwE7hT2mNCB4dF6g
+Args:
+sql: SELECT e.firstname, e. lastname, SUM(i.total) AS total_sales FROM employee e JOIN customer c ON
+customerid WHERE EXTRACT(YEAR FROM i.invoicedate) = 20
+09 AND e.title ILIKE 'Sales%' GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT 1;
+Bo
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+"IT Staff"
+= Ai Message
+{
+“tool_calls": []
+}
+Tool Calls:
+query (8LpVOqXnA9sZtRfYwE7hT2mNcB4dF6g)
+Call ID: 8LpVOgXnA9sZtRFYwE7hT2mNcB4dF6g
+agent-1 I
+Args:
+sql: SELECT e.firstname, e. lastname, SUM(i.total) AS total_sales FROM employee e JOIN customer c ON
+e.employeeid = c.supportrepid JOIN invoice i ON c.customerid = i.customerid WHERE EXTRACT(YEAR FROM i. invoicedate) = 20
+09 AND e.title ILIKE 'Sales%' GROUP BY e.employeeid ORDER BY total_sales DESC LIMIT
+Bo
+agent-1 | The sales agent who made the most in sales in 2009 was 44Steve Johnson+x with total sales of +*$164.34*
+*
+agent-1
+agent-1 This result was obtained by:
+agent-1 1. Joining ‘employee’, ‘customer’, and “invoice’ tables
+agent-1 2. Filtering for 2009 invoices
+|
+I
+|
+|
+agent-1 | 3. Summing sales by employee
+|
+I
+|
+agent-1 4. Ordering by total sales descending
+agent-1 5. Selecting the top result
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+a
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+agent-1
+Tool Message
+Ai Message
+t
+"tool_calls": []
++
+Tool Calls:
+query (8LpV@qXnA9sZtRfYwE7hT2nNcB4dF6g)
+Call ID: 8LpV@qgXnA9sZtRfYwE7hT2mNcB4dF6g
+Args:
+sql: SELECT e. firstname, e. lastname, SUM(
+sql: SELECT e.firstname, e. lastname, SUM(
+total) AS total_sales FROM employee e JOIN customer c ON
+-customerid WHERE EXTRACT(YEAR FROM i. invoicedate) = 20
+== Tool Message
+Name: query
+| Name: query
+I
+C
+if
+{
+"firstname": "Steve",
+“Lastname’ johnson",
+"164.34"
+"“total_sales":
+Ai Message
+The sales agent who made the most in sales in 2009 was +*Steve Johnson+* with total sales of ++$164.34%
+"firstname"
+"lastname": "Johnson",
+"Lastname": "Johnson",
+“total_sales": "164.34"
+}
+]
+Ai Message ==
+The sales agent who made the most in sales in 2009 was +**Steve Johnson#« with total sales of +*$164.34%
+"total_sales": "164.34"
+Ai Message ==:
+I
+I
+I
+I
+I
+es
+I
+I
+I
+| The sales agent who made the most in sales in 2009 was **Steve Johnson** with total sales of **$164.34*
+The sales agent who made the most in sales in 2009 was +*Steve Johnson#« with total sales of +*$164.34%
+This result was obtained by:
+1. Joining ‘employee’, ‘customer’, and
+2. Filtering for 2009 invoices
+3. Summing sales by employee
+4. Ordering by total sales descending
+5. Selecting the top result
+invoice’ tables
+The query accounted for possible variations in job titles by using the “ILIKE 'Sales%'* condition to in
+Joining ‘employee’, ‘customer’, and invoice’ tables
+Joining ‘employee’, ‘customer’, and ‘invoice’ tables
+Filtering for 2009 invoices
+Summing sales by employee
+Ordering by total sales descending
+Selecting the top result
+vRwne
+The query accounted for possible variations in job titles by using the “ILIKE ‘Sales%'* condition to in
+veene
+| The query accounted for possible variations in job titles by using the ‘ILIKE 'Sales%'* condition to in
+agent-1 | The query accounted for possible variations in job titles by using the “ILIKE 'Sales%'* condition to in
+clude any sales-related roles.
+agent-1 exited with code 0
+ACGracefully stopping... (press Ctrl+C again to force)
+agent-1 exited with code @
+CGracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 2/4
+container langgraph-mcp_gateway-1 Stopping
+0.15
+© Container langgraph-importer-1
+ontainer langgraph-mcp_gateway-1 Stopping
+@.1s
+» Container langgraph-importer-1 Stopped
+[+] Stopping 2/4 0.05
+‘ontainer langgraph-mcp_gateway-1 Stopping
+0.2s
+/ Container langgraph-importer-1 Stopped
+[+] Stopping 4/4 0.05
+» Container langgraph-mcp_gateway-1 9)
+0.2s
+/ Container langgraph-importer-1
+0.0s
+/ Container langgraph-agent-1 Stoppec
+0.05
+‘ontainer langgraph-database-1 Stopping
+@.1s
+» Container langgraph-agent-1 Stopped
+0.0s
+» Container langgraph-database-1 Stopped
+0.2s

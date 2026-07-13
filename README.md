@@ -37,3 +37,7 @@ The plan is to build the project as a series of milestones:
     - Multiple LLM providers
     - AWS deployment
     - Metrics and tracing
+
+
+### How to run
+  docker compose -f compose.yaml -f compose.openai.yaml up
