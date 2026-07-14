@@ -1,4 +1,4 @@
-# Java AI Reference Architecture
+# Java AI Reference Environment
 
 A reproducible local environment for building and testing enterprise AI applications in Java using **Spring Boot**, **Spring AI**, **Model Context Protocol (MCP)**, PostgreSQL, and Angular.
 
