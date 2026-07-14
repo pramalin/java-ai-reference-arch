@@ -1,0 +1,16 @@
+services:
+  application:
+    environment:
+      OPENAI_API_KEY: local-model
+      MCP_SERVER_URL: http://mcp-gateway:8811
+
+    models:
+      local-llm:
+        endpoint_var: SPRING_AI_OPENAI_BASE_URL
+        model_var: OPENAI_MODEL_NAME
+
+models:
+  local-llm:
+#   model: ai/gemma3:4B-Q4_0
+    model: hf.co/Manojb/Qwen3-4B-toolcalling-gguf-codex
+    context_size: 4096

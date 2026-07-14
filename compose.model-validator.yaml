@@ -1,0 +1,19 @@
+services:
+  validator:
+    build:
+      context: .
+      dockerfile: tools/model-validator/Dockerfile
+    environment:
+      OPENAI_API_KEY: local-model
+    models:
+      test-model:
+        endpoint_var: SPRING_AI_OPENAI_BASE_URL
+        model_var: OPENAI_MODEL_NAME
+    ports:
+      - "8081:8080"
+
+models:
+  test-model:
+    model: ${MODEL_NAME:-ai/gemma3:4B-Q4_0}
+    context_size: 4096
+

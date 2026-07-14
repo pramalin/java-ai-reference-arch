@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: model-validator
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:local-model}
+      base-url: ${SPRING_AI_OPENAI_BASE_URL}
+      chat:
+        options:
+          model: ${OPENAI_MODEL_NAME}
+          temperature: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
