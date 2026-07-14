@@ -149,7 +149,7 @@ For Docker Model Runner details and model-selection notes, see [`docs/model-runn
 ## Application Endpoints
 
 ```text
-Angular console:       http://localhost:4200 (unmodified scaffold)
+Angular console:       http://localhost:4200
 Spring Boot API:       http://localhost:8080
 Application health:    http://localhost:8080/actuator/health
 Application readiness: http://localhost:8080/actuator/health/readiness
@@ -232,7 +232,7 @@ Working today:
 
 Still under development:
 
-- Angular query and trace interface
+- Angular query and trace interface  (currently it is unmodified scaffold)
 - Generated SQL and tool-trace visualization
 - Repeated-run consistency checks
 - Answer validation
