@@ -1,0 +1,21 @@
+services:
+  mock-llm:
+    image: ghcr.io/dwmkerr/mock-llm:latest
+    container_name: mock-llm
+    volumes:
+      - ./mock-llm.yaml:/app/mock-llm.yaml:ro
+    ports:
+      - "6556:6556"
+    # No healthcheck — mock-llm starts in well under a second, and this
+    # environment's container-internal loopback doesn't reliably reach
+    # the app's own listening socket (see: repeated Connection refused
+    # from inside the container despite the host reaching it fine).
+
+  application:
+    environment:
+      - OPENAI_MODEL_NAME=gpt-4.1-mini
+      - OPENAI_API_KEY=mock-key
+      - OPENAI_BASE_URL=http://mock-llm:6556/v1
+      - MCP_SERVER_URL=http://mcp-gateway:8811
+    depends_on:
+     - mock-llm

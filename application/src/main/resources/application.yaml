@@ -3,6 +3,7 @@ spring:
     name: ai-reference
   ai:
     openai:
+      base-url: ${OPENAI_BASE_URL:https://api.openai.com}
       api-key: ${OPENAI_API_KEY}
       chat:
         options:

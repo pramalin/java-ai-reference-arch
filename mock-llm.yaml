@@ -1,0 +1,206 @@
+streaming:
+  chunkSize: 40
+  chunkIntervalMs: 30
+
+rules:
+  - path: "/v1/models"
+    method: "GET"
+    match: "@"
+    response:
+      status: 200
+      content: |
+        {
+          "object": "list",
+          "data": [{"id": "gpt-4.1-mini", "object": "model", "owned_by": "mock-llm"}]
+        }
+
+  # --- Fallback: echo, with index/usage included. Placed first because
+  # mock-llm uses "last match wins" -- since this rule's match ("@") matches
+  # every request, it must be listed BEFORE the specific scenario rules
+  # below so they can override it, not after.
+  # NOTE: deliberately does not interpolate body.messages[-1].content here.
+  # Tool-result messages can contain raw newlines/control characters, and
+  # splicing those directly into a JSON string template produces invalid
+  # JSON (this broke earlier with "Bad control character in string
+  # literal"). Check `docker compose logs mock-llm` for the raw request
+  # if you need to see what didn't match.
+  - path: "/v1/chat/completions"
+    method: "POST"
+    match: "@"
+    response:
+      status: 200
+      content: |
+        {
+          "id": "chatcmpl-{{timestamp}}",
+          "object": "chat.completion",
+          "model": "{{jmes request body.model}}",
+          "choices": [{
+            "index": 0,
+            "message": {"role": "assistant", "content": "UNMATCHED: no scripted rule matched this request"},
+            "finish_reason": "stop"
+          }],
+          "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20}
+        }
+
+  # --- Deterministic replay of the README's "how many employees" example.
+  # Step 0: model discovers schema via the MCP list_tables tool.
+  # Step 1: model runs the generated SQL via execute_sql.
+  # Step 2: model formulates the final natural-language answer from the tool result.
+  #
+  # IMPORTANT: this does NOT use "sequence". After a tool call executes,
+  # body.messages[-1] becomes the tool's result, not the original question --
+  # so matching on question text only works for step 0. Sequence counters
+  # are also global per path (shared across every rule and every repeated
+  # run), so relying on them here caused cross-talk between repeated test
+  # runs. Instead, steps 1/2 match on the tool_call_id this file itself
+  # mints in steps 0/1 -- fully stateless, safe to re-run any number of
+  # times, and immune to other traffic on the same path.
+  #
+  # Note: the openai-java SDK (used by Spring AI 2.0) strictly requires
+  # "index" on every choice and a top-level "usage" object -- both included
+  # below even though mock-llm itself doesn't require them.
+  - path: "/v1/chat/completions"
+    match: "contains(body.messages[-1].content, 'How many employees are in the system')"
+    response:
+      status: 200
+      content: |
+        {
+          "id": "chatcmpl-{{timestamp}}",
+          "object": "chat.completion",
+          "model": "{{jmes request body.model}}",
+          "choices": [{
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "tool_calls": [{
+                "id": "call_1",
+                "type": "function",
+                "function": {"name": "list_tables", "arguments": "{}"}
+              }]
+            },
+            "finish_reason": "tool_calls"
+          }],
+          "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20}
+        }
+
+  - path: "/v1/chat/completions"
+    match: "body.messages[-1].tool_call_id == 'call_1'"
+    response:
+      status: 200
+      content: |
+        {
+          "id": "chatcmpl-{{timestamp}}",
+          "object": "chat.completion",
+          "model": "{{jmes request body.model}}",
+          "choices": [{
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "tool_calls": [{
+                "id": "call_2",
+                "type": "function",
+                "function": {"name": "execute_sql", "arguments": "{\"query\":\"SELECT COUNT(*) FROM employee\"}"}
+              }]
+            },
+            "finish_reason": "tool_calls"
+          }],
+          "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20}
+        }
+
+  - path: "/v1/chat/completions"
+    match: "body.messages[-1].tool_call_id == 'call_2'"
+    response:
+      status: 200
+      content: |
+        {
+          "id": "chatcmpl-{{timestamp}}",
+          "object": "chat.completion",
+          "model": "{{jmes request body.model}}",
+          "choices": [{
+            "index": 0,
+            "message": {"role": "assistant", "content": "There are 8 employees in the system."},
+            "finish_reason": "stop"
+          }],
+          "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20}
+        }
+
+  # --- Ambiguity scenario: two scripted interpretations of the same question. ---
+  - path: "/v1/chat/completions"
+    match: "contains(body.messages[-1].content, 'ambiguity:managers')"
+    sequence: 0
+    response:
+      status: 200
+      content: |
+        {
+          "id": "chatcmpl-{{timestamp}}",
+          "object": "chat.completion",
+          "model": "{{jmes request body.model}}",
+          "choices": [{
+            "index": 0,
+            "message": {"role": "assistant", "content": "Interpretation A: 3 employees have \"manager\" in their title."},
+            "finish_reason": "stop"
+          }],
+          "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20}
+        }
+
+  - path: "/v1/chat/completions"
+    match: "contains(body.messages[-1].content, 'ambiguity:managers')"
+    sequence: 1
+    response:
+      status: 200
+      content: |
+        {
+          "id": "chatcmpl-{{timestamp}}",
+          "object": "chat.completion",
+          "model": "{{jmes request body.model}}",
+          "choices": [{
+            "index": 0,
+            "message": {"role": "assistant", "content": "Interpretation B: 4 employees supervise at least one other employee."},
+            "finish_reason": "stop"
+          }],
+          "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20}
+        }
+
+  # --- MCP tool failure simulation ---
+  - path: "/v1/chat/completions"
+    match: "contains(body.messages[-1].content, 'error:tool-fail')"
+    sequence: 0
+    response:
+      status: 200
+      content: |
+        {
+          "id": "chatcmpl-{{timestamp}}",
+          "object": "chat.completion",
+          "model": "{{jmes request body.model}}",
+          "choices": [{
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "tool_calls": [{
+                "id": "call_err",
+                "type": "function",
+                "function": {"name": "execute_sql", "arguments": "{\"query\":\"SELECT * FROM nonexistent_table\"}"}
+              }]
+            },
+            "finish_reason": "tool_calls"
+          }],
+          "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20}
+        }
+
+  # --- Upstream error simulation ---
+  - path: "/v1/chat/completions"
+    match: "contains(body.messages[-1].content, 'error:429')"
+    response:
+      status: 429
+      content: |
+        {"error": {"message": "Rate limit exceeded", "type": "requests", "code": "rate_limit_exceeded"}}
+
+  - path: "/v1/chat/completions"
+    match: "contains(body.messages[-1].content, 'error:500')"
+    response:
+      status: 500
+      content: |
+        {"error": {"message": "Internal server error", "type": "server_error"}}

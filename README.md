@@ -245,6 +245,9 @@ Still under development:
 - [`docs/sample-data.md`](docs/sample-data.md)
 - [`tools/model-validator/README.md`](tools/model-validator/README.md)
 
+## Testing with a mocked LLM
+For deterministic, offline testing of the tool-calling flow without a live model, see [docs/mock-llm-setup.md](docs/mock-llm-setup.md).
+
 ## Project Status
 
 This repository is a development and architectural reference, not a production-ready system. Its purpose is to provide a practical environment for exploring how enterprise AI workflows can be made observable, testable, and easier to validate.
