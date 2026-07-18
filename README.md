@@ -251,3 +251,12 @@ For deterministic, offline testing of the tool-calling flow without a live model
 ## Project Status
 
 This repository is a development and architectural reference, not a production-ready system. Its purpose is to provide a practical environment for exploring how enterprise AI workflows can be made observable, testable, and easier to validate.
+
+
+## Related
+
+See [`reference/compose-for-agents-fixes/`](reference/compose-for-agents-fixes/)
+for notes and patched `compose.yaml` files for running examples from
+[docker/compose-for-agents](https://github.com/docker/compose-for-agents)
+on hardware without a GPU (tested on a Chromebook), using the OpenAI API
+instead of local model inference.

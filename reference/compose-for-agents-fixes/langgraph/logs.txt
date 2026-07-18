@@ -1,0 +1,283 @@
+importer-1  | + pgloader /app/Chinook.db postgres://user:password@database:5432/database
+agent-1     | Using OpenAI with gpt-4.1-mini
+agent-1     | MCP tools loaded: [StructuredTool(name='describe_table', description='\nGet the schema/structure of a specific database table.\n\nArgs:\n    table_name: Name of the table to describe\n    \nReturns:\n    The table schema with column names, types, and constraints\n', args_schema={'properties': {'table_name': {'title': 'Table Name', 'type': 'string'}}, 'required': ['table_name'], 'title': 'describe_tableArguments', 'type': 'object'}, handle_tool_error=<function _handle_mcp_tool_error at 0x7949bd06d4e0>, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7949baeff060>), StructuredTool(name='execute_sql', description='\nExecute a raw SQL query on the database.\n\nArgs:\n    sql_query: The SQL query to execute\n    \nReturns:\n    The query results formatted as text\n', args_schema={'properties': {'sql_query': {'title': 'Sql Query', 'type': 'string'}}, 'required': ['sql_query'], 'title': 'execute_sqlArguments', 'type': 'object'}, handle_tool_error=<function _handle_mcp_tool_error at 0x7949bd06d4e0>, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7949baefefc0>), StructuredTool(name='list_tables', description='\nList all tables in the database.\n\nReturns:\n    A list of all available tables with their column counts\n', args_schema={'properties': {}, 'title': 'list_tablesArguments', 'type': 'object'}, handle_tool_error=<function _handle_mcp_tool_error at 0x7949bd06d4e0>, response_format='content_and_artifact', coroutine=<function convert_mcp_tool_to_langchain_tool.<locals>.call_tool at 0x7949baefef20>)]
+agent-1     | /app/agent.py:66: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+agent-1     |   agent = create_react_agent(
+agent-1     | ================================ Human Message =================================
+agent-1     | 
+agent-1     | "Which sales agent made the most in sales in 2009?"
+agent-1     | ================================== Ai Message ==================================
+agent-1     | Tool Calls:
+agent-1     |   list_tables (call_M2UvVxYsGyzho5YrcwRSQnNd)
+agent-1     |  Call ID: call_M2UvVxYsGyzho5YrcwRSQnNd
+agent-1     |   Args:
+agent-1     | ================================= Tool Message =================================
+agent-1     | Name: list_tables
+agent-1     | 
+agent-1     | [{'type': 'text', 'text': 'Available Tables:\n\n- album (3 columns)\n- artist (2 columns)\n- customer (13 columns)\n- employee (15 columns)\n- genre (2 columns)\n- invoice (9 columns)\n- invoiceline (5 columns)\n- mediatype (2 columns)\n- playlist (2 columns)\n- playlisttrack (2 columns)\n- track (9 columns)\n', 'id': 'lc_d9915c7f-1cd9-46b6-bcb2-0a466a0ee8fd'}]
+agent-1     | ================================== Ai Message ==================================
+agent-1     | Tool Calls:
+agent-1     |   describe_table (call_eg7yjFpnRSgjyeJrAgbyToYp)
+agent-1     |  Call ID: call_eg7yjFpnRSgjyeJrAgbyToYp
+agent-1     |   Args:
+agent-1     |     table_name: employee
+agent-1     |   describe_table (call_JyAmXAwoJN2WeTbH0SvsFFww)
+agent-1     |  Call ID: call_JyAmXAwoJN2WeTbH0SvsFFww
+agent-1     |   Args:
+agent-1     |     table_name: invoice
+agent-1     |   describe_table (call_qXUovLoDBSTyO68ZfGD1fMF6)
+database-1  | The files belonging to this database system will be owned by user "postgres".
+database-1  | This user must also own the server process.
+database-1  | 
+database-1  | The database cluster will be initialized with locale "en_US.utf8".
+database-1  | The default database encoding has accordingly been set to "UTF8".
+database-1  | The default text search configuration will be set to "english".
+database-1  | 
+database-1  | Data page checksums are enabled.
+database-1  | 
+database-1  | fixing permissions on existing directory /var/lib/postgresql/18/docker ... ok
+database-1  | creating subdirectories ... ok
+database-1  | selecting dynamic shared memory implementation ... posix
+database-1  | selecting default "max_connections" ... 100
+database-1  | selecting default "shared_buffers" ... 128MB
+database-1  | selecting default time zone ... Etc/UTC
+database-1  | creating configuration files ... ok
+database-1  | running bootstrap script ... ok
+database-1  | performing post-bootstrap initialization ... ok
+database-1  | syncing data to disk ... ok
+database-1  | 
+database-1  | 
+database-1  | initdb: warning: enabling "trust" authentication for local connections
+database-1  | Success. You can now start the database server using:
+database-1  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+database-1  | 
+database-1  |     pg_ctl -D /var/lib/postgresql/18/docker -l logfile start
+database-1  | 
+database-1  | waiting for server to start....2026-07-11 21:54:06.964 UTC [53] LOG:  starting PostgreSQL 18.4 (Debian 18.4-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+database-1  | 2026-07-11 21:54:07.006 UTC [53] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+database-1  | 2026-07-11 21:54:07.136 UTC [59] LOG:  database system was shut down at 2026-07-11 21:54:05 UTC
+database-1  | 2026-07-11 21:54:07.186 UTC [53] LOG:  database system is ready to accept connections
+database-1  |  done
+database-1  | server started
+database-1  | CREATE DATABASE
+database-1  | 
+database-1  | 
+database-1  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+database-1  | 
+database-1  | waiting for server to shut down...2026-07-11 21:54:07.733 UTC [53] LOG:  received fast shutdown request
+database-1  | .2026-07-11 21:54:07.786 UTC [53] LOG:  aborting any active transactions
+database-1  | 2026-07-11 21:54:07.793 UTC [53] LOG:  background worker "logical replication launcher" (PID 62) exited with exit code 1
+database-1  | 2026-07-11 21:54:07.793 UTC [57] LOG:  shutting down
+database-1  | 2026-07-11 21:54:07.836 UTC [57] LOG:  checkpoint starting: shutdown immediate
+database-1  | 2026-07-11 21:54:08.473 UTC [57] LOG:  checkpoint complete: wrote 943 buffers (5.8%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.089 s, sync=0.388 s, total=0.680 s; sync files=303, longest=0.238 s, average=0.002 s; distance=4352 kB, estimate=4352 kB; lsn=0/1B9FBA8, redo lsn=0/1B9FBA8
+database-1  | 2026-07-11 21:54:08.565 UTC [53] LOG:  database system is shut down
+database-1  |  done
+database-1  | server stopped
+database-1  | 
+database-1  | PostgreSQL init process complete; ready for start up.
+agent-1     |  Call ID: call_qXUovLoDBSTyO68ZfGD1fMF6
+agent-1     |   Args:
+mcp-gateway-1  | Note: dynamic-tools disabled when using --servers flag
+mcp-gateway-1  | - Reading configuration...
+mcp-gateway-1  |   - Reading catalog from [https://desktop.docker.com/mcp/catalog/v3/catalog.yaml]
+mcp-gateway-1  |   - Reading config from /mcp-config.yaml
+agent-1        |     table_name: invoiceline
+agent-1        | ================================= Tool Message =================================
+agent-1        | Name: describe_table
+agent-1        | 
+importer-1     | 2026-07-11T21:54:11.015000Z LOG pgloader version "3.6.9"
+importer-1     | 2026-07-11T21:54:11.100001Z LOG Migrating from #<SQLITE-CONNECTION sqlite:///app/Chinook.db {1004FFE773}>
+importer-1     | 2026-07-11T21:54:11.100001Z LOG Migrating into #<PGSQL-CONNECTION pgsql://user@database:5432/database {1005171323}>
+importer-1     | 2026-07-11T21:54:12.086010Z LOG report summary reset
+importer-1     |              table name     errors       rows      bytes      total time
+importer-1     | -----------------------  ---------  ---------  ---------  --------------
+importer-1     |                   fetch          0          0                     0.000s
+importer-1     |         fetch meta data          0         44                     0.051s
+importer-1     |          Create Schemas          0          0                     0.001s
+importer-1     |        Create SQL Types          0          0                     0.005s
+importer-1     |           Create tables          0         22                     0.026s
+importer-1     |          Set Table OIDs          0         11                     0.007s
+importer-1     | -----------------------  ---------  ---------  ---------  --------------
+importer-1     |                   album          0        347    10.5 kB          0.132s
+importer-1     |                customer          0         59     6.7 kB          0.175s
+importer-1     |                   genre          0         25     0.3 kB          0.247s
+importer-1     |             invoiceline          0       2240    43.6 kB          0.374s
+importer-1     |                playlist          0         18     0.3 kB          0.396s
+importer-1     |                   track          0       3503   236.5 kB          0.464s
+importer-1     |                  artist          0        275     6.8 kB          0.060s
+importer-1     |                employee          0          8     1.4 kB          0.058s
+importer-1     |                 invoice          0        412    31.0 kB          0.235s
+importer-1     |               mediatype          0          5     0.1 kB          0.258s
+importer-1     |           playlisttrack          0       8715    57.3 kB          0.292s
+importer-1     | -----------------------  ---------  ---------  ---------  --------------
+importer-1     | COPY Threads Completion          0          4                     0.487s
+importer-1     |          Create Indexes          0         22                     0.068s
+importer-1     |  Index Build Completion          0         22                     0.165s
+importer-1     |         Reset Sequences          0          0                     0.042s
+importer-1     |            Primary Keys          0         11                     0.008s
+importer-1     |     Create Foreign Keys          0         11                     0.018s
+importer-1     |         Create Triggers          0          0                     0.000s
+importer-1     |        Install Comments          0          0                     0.000s
+importer-1     | -----------------------  ---------  ---------  ---------  --------------
+importer-1     |       Total import time          ✓      15607   394.5 kB          0.788s
+agent-1        | [{'type': 'text', 'text': 'Table: invoiceline\n\nColumns:\n- invoicelineid: bigint (NOT NULL)\n- invoiceid: bigint (NULL)\n- trackid: bigint (NULL)\n- unitprice: numeric (NULL)\n- quantity: bigint (NULL)\n', 'id': 'lc_8a0d3b2b-0ba5-4d2b-ba90-b6429ebe3ca6'}]
+agent-1        | ================================== Ai Message ==================================
+agent-1        | Tool Calls:
+agent-1        |   describe_table (call_vt9q3J64A7ptCS4d8BnIJ9Ww)
+agent-1        |  Call ID: call_vt9q3J64A7ptCS4d8BnIJ9Ww
+agent-1        |   Args:
+agent-1        |     table_name: customer
+agent-1        | ================================= Tool Message =================================
+agent-1        | Name: describe_table
+agent-1        | 
+agent-1        | [{'type': 'text', 'text': 'Table: customer\n\nColumns:\n- customerid: bigint (NOT NULL)\n- firstname: text (NULL)\n- lastname: text (NULL)\n- company: text (NULL)\n- address: text (NULL)\n- city: text (NULL)\n- state: text (NULL)\n- country: text (NULL)\n- postalcode: text (NULL)\n- phone: text (NULL)\n- fax: text (NULL)\n- email: text (NULL)\n- supportrepid: bigint (NULL)\n', 'id': 'lc_ab69a9c5-6599-4d8d-ae1a-2a6f7662e5f3'}]
+agent-1        | ================================== Ai Message ==================================
+agent-1        | Tool Calls:
+agent-1        |   execute_sql (call_gIddlVkvHLMrw2OIHRDL8IG1)
+agent-1        |  Call ID: call_gIddlVkvHLMrw2OIHRDL8IG1
+agent-1        |   Args:
+agent-1        |     sql_query: SELECT e.employeeid, e.firstname, e.lastname, SUM(i.total) AS total_sales
+agent-1        | FROM employee e
+agent-1        | JOIN customer c ON e.employeeid = c.supportrepid
+agent-1        | JOIN invoice i ON c.customerid = i.customerid
+agent-1        | WHERE EXTRACT(YEAR FROM i.invoicedate) = 2009
+agent-1        | GROUP BY e.employeeid, e.firstname, e.lastname
+agent-1        | ORDER BY total_sales DESC
+agent-1        | LIMIT 1;
+agent-1        | ================================= Tool Message =================================
+agent-1        | Name: execute_sql
+agent-1        | 
+agent-1        | [{'type': 'text', 'text': 'SQL Query: SELECT e.employeeid, e.firstname, e.lastname, SUM(i.total) AS total_sales\nFROM employee e\nJOIN customer c ON e.employeeid = c.supportrepid\nJOIN invoice i ON c.customerid = i.customerid\nWHERE EXTRACT(YEAR FROM i.invoicedate) = 2009\nGROUP BY e.employeeid, e.firstname, e.lastname\nORDER BY total_sales DESC\nLIMIT 1;\n\nResults (3 rows):\nemployeeid | firstname | lastname | total_sales\n---------- | --------- | -------- | -----------\n5 | Steve | Johnson | 164.34\n4 | Margaret | Park | 161.37\n3 | Jane | Peacock | 123.75\n', 'id': 'lc_301e5a87-a4a3-483c-8e3c-c6a664556209'}]
+agent-1        | ================================== Ai Message ==================================
+agent-1        | 
+agent-1        | The sales agent who made the most in sales in 2009 is Steve Johnson with total sales of 164.34.
+mcp-gateway-1  | Warning: Failed to fetch secrets from secrets engine: secrets engine is not available: unavailable: dial unix /root/.cache/docker-secrets-engine/engine.sock: connect: no such file or directory
+mcp-gateway-1  | - Configuration read in 334.083653ms
+mcp-gateway-1  | - Using images:
+mcp-gateway-1  |   - souhardyak/mcp-db-server@sha256:0c530cfd08ac28a497e8ccd6365b2e1ca87f7fc3676b3175235d0e301da25d17
+mcp-gateway-1  | > Images pulled in 2.6306ms
+mcp-gateway-1  | - Those servers are enabled: database-server
+mcp-gateway-1  | - Listing MCP tools...
+mcp-gateway-1  |   - Running souhardyak/mcp-db-server with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never -l docker-mcp=true -l docker-mcp-tool-type=mcp -l docker-mcp-name=database-server -l docker-mcp-transport=stdio --network langgraph_default -e DATABASE_URL]
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Using database URL from environment variable
+mcp-gateway-1  | - database-server: INFO:db:Database engine initialized for postgresql
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Connected to database: postgresql+asyncpg://user:password@database:5432/database
+database-1  | 
+database-1     | 2026-07-11 21:54:08.776 UTC [1] LOG:  starting PostgreSQL 18.4 (Debian 18.4-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+database-1     | 2026-07-11 21:54:08.777 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+database-1     | 2026-07-11 21:54:08.777 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+database-1     | 2026-07-11 21:54:08.857 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+database-1     | 2026-07-11 21:54:08.947 UTC [75] LOG:  database system was shut down at 2026-07-11 21:54:08 UTC
+database-1     | 2026-07-11 21:54:08.996 UTC [1] LOG:  database system is ready to accept connections
+mcp-gateway-1  | - database-server: WARNING:nl_to_sql:HuggingFace transformers not available. Using rule-based fallback.
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:NL to SQL converter initialized
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Database initialized successfully
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type ListToolsRequest
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type ListPromptsRequest
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type ListResourcesRequest
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type ListResourceTemplatesRequest
+mcp-gateway-1  |   > database-server: (3 tools) (2 resources)
+mcp-gateway-1  | > 3 tools listed in 7.601763712s
+mcp-gateway-1  | > Initialized in 7.941269383s
+mcp-gateway-1  | WARNING: --allow-unauthenticated is exposing the MCP gateway without authentication on all interfaces. Any client that can reach this listener can execute configured MCP tools. Remove --allow-unauthenticated or bind with --host 127.0.0.1 unless this is intentional.
+mcp-gateway-1  | > Start sse server on port 8811
+mcp-gateway-1  | > Gateway URL: http://localhost:8811/sse
+mcp-gateway-1  | > Authentication disabled by explicit configuration
+mcp-gateway-1  | - Client initialized mcp@0.1.0 
+mcp-gateway-1  | - Current working directory: /
+mcp-gateway-1  | - Initialize request:
+mcp-gateway-1  |   {
+mcp-gateway-1  |     "capabilities": {
+mcp-gateway-1  |       "roots": {}
+mcp-gateway-1  |     },
+mcp-gateway-1  |     "clientInfo": {
+mcp-gateway-1  |       "name": "mcp",
+mcp-gateway-1  |       "version": "0.1.0"
+mcp-gateway-1  |     },
+mcp-gateway-1  |     "protocolVersion": "2025-11-25"
+mcp-gateway-1  |   }
+mcp-gateway-1  |   - Scanning tool call arguments for secrets...
+mcp-gateway-1  |   > No secret found in arguments.
+mcp-gateway-1  |   - Calling tool list_tables with arguments: object with 0 field(s)
+mcp-gateway-1  |   - Running souhardyak/mcp-db-server with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never -l docker-mcp=true -l docker-mcp-tool-type=mcp -l docker-mcp-name=database-server -l docker-mcp-transport=stdio --network langgraph_default -e DATABASE_URL]
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Using database URL from environment variable
+mcp-gateway-1  | - database-server: INFO:db:Database engine initialized for postgresql
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Connected to database: postgresql+asyncpg://user:password@database:5432/database
+mcp-gateway-1  | - database-server: WARNING:nl_to_sql:HuggingFace transformers not available. Using rule-based fallback.
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:NL to SQL converter initialized
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Database initialized successfully
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type CallToolRequest
+mcp-gateway-1  |   > Calling tool list_tables took: 6.173000749s
+mcp-gateway-1  |   - Scanning tool call response for secrets...
+mcp-gateway-1  |   > No secret found in response.
+mcp-gateway-1  |   - Scanning tool call arguments for secrets...
+mcp-gateway-1  |   > No secret found in arguments.
+mcp-gateway-1  |   - Calling tool describe_table with arguments: object with 1 field(s)
+mcp-gateway-1  |   - Running souhardyak/mcp-db-server with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never -l docker-mcp=true -l docker-mcp-tool-type=mcp -l docker-mcp-name=database-server -l docker-mcp-transport=stdio --network langgraph_default -e DATABASE_URL]
+mcp-gateway-1  |   - Scanning tool call arguments for secrets...
+mcp-gateway-1  |   > No secret found in arguments.
+mcp-gateway-1  |   - Calling tool describe_table with arguments: object with 1 field(s)
+mcp-gateway-1  |   - Running souhardyak/mcp-db-server with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never -l docker-mcp=true -l docker-mcp-tool-type=mcp -l docker-mcp-name=database-server -l docker-mcp-transport=stdio --network langgraph_default -e DATABASE_URL]
+mcp-gateway-1  |   - Scanning tool call arguments for secrets...
+mcp-gateway-1  |   > No secret found in arguments.
+mcp-gateway-1  |   - Calling tool describe_table with arguments: object with 1 field(s)
+mcp-gateway-1  |   - Running souhardyak/mcp-db-server with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never -l docker-mcp=true -l docker-mcp-tool-type=mcp -l docker-mcp-name=database-server -l docker-mcp-transport=stdio --network langgraph_default -e DATABASE_URL]
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Using database URL from environment variable
+mcp-gateway-1  | - database-server: INFO:db:Database engine initialized for postgresql
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Connected to database: postgresql+asyncpg://user:password@database:5432/database
+mcp-gateway-1  | - database-server: WARNING:nl_to_sql:HuggingFace transformers not available. Using rule-based fallback.
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:NL to SQL converter initialized
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Database initialized successfully
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type CallToolRequest
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Using database URL from environment variable
+mcp-gateway-1  | - database-server: INFO:db:Database engine initialized for postgresql
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Connected to database: postgresql+asyncpg://user:password@database:5432/database
+mcp-gateway-1  | - database-server: WARNING:nl_to_sql:HuggingFace transformers not available. Using rule-based fallback.
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:NL to SQL converter initialized
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Database initialized successfully
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type CallToolRequest
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Using database URL from environment variable
+mcp-gateway-1  | - database-server: INFO:db:Database engine initialized for postgresql
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Connected to database: postgresql+asyncpg://user:password@database:5432/database
+mcp-gateway-1  | - database-server: WARNING:nl_to_sql:HuggingFace transformers not available. Using rule-based fallback.
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:NL to SQL converter initialized
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Database initialized successfully
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type CallToolRequest
+mcp-gateway-1  |   > Calling tool describe_table took: 9.295704087s
+mcp-gateway-1  |   - Scanning tool call response for secrets...
+mcp-gateway-1  |   > No secret found in response.
+mcp-gateway-1  |   > Calling tool describe_table took: 9.971442003s
+mcp-gateway-1  |   - Scanning tool call response for secrets...
+mcp-gateway-1  |   > No secret found in response.
+mcp-gateway-1  |   > Calling tool describe_table took: 10.089864329s
+mcp-gateway-1  |   - Scanning tool call response for secrets...
+mcp-gateway-1  |   > No secret found in response.
+mcp-gateway-1  |   - Scanning tool call arguments for secrets...
+mcp-gateway-1  |   > No secret found in arguments.
+mcp-gateway-1  |   - Calling tool describe_table with arguments: object with 1 field(s)
+mcp-gateway-1  |   - Running souhardyak/mcp-db-server with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never -l docker-mcp=true -l docker-mcp-tool-type=mcp -l docker-mcp-name=database-server -l docker-mcp-transport=stdio --network langgraph_default -e DATABASE_URL]
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Using database URL from environment variable
+mcp-gateway-1  | - database-server: INFO:db:Database engine initialized for postgresql
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Connected to database: postgresql+asyncpg://user:password@database:5432/database
+mcp-gateway-1  | - database-server: WARNING:nl_to_sql:HuggingFace transformers not available. Using rule-based fallback.
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:NL to SQL converter initialized
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Database initialized successfully
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type CallToolRequest
+mcp-gateway-1  |   > Calling tool describe_table took: 6.042019097s
+mcp-gateway-1  |   - Scanning tool call response for secrets...
+mcp-gateway-1  |   > No secret found in response.
+mcp-gateway-1  |   - Scanning tool call arguments for secrets...
+mcp-gateway-1  |   > No secret found in arguments.
+mcp-gateway-1  |   - Calling tool execute_sql with arguments: object with 1 field(s)
+mcp-gateway-1  |   - Running souhardyak/mcp-db-server with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never -l docker-mcp=true -l docker-mcp-tool-type=mcp -l docker-mcp-name=database-server -l docker-mcp-transport=stdio --network langgraph_default -e DATABASE_URL]
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Using database URL from environment variable
+mcp-gateway-1  | - database-server: INFO:db:Database engine initialized for postgresql
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Connected to database: postgresql+asyncpg://user:password@database:5432/database
+mcp-gateway-1  | - database-server: WARNING:nl_to_sql:HuggingFace transformers not available. Using rule-based fallback.
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:NL to SQL converter initialized
+mcp-gateway-1  | - database-server: INFO:mcp-database-server:Database initialized successfully
+mcp-gateway-1  | - database-server: INFO:mcp.server.lowlevel.server:Processing request of type CallToolRequest
+mcp-gateway-1  |   > Calling tool execute_sql took: 6.157630896s
+mcp-gateway-1  |   - Scanning tool call response for secrets...
+mcp-gateway-1  |   > No secret found in response.
+mcp-gateway-1  | - Client disconnected mcp@0.1.0, releasing containers

@@ -1,0 +1,118 @@
+WARN[0000] Found orphan containers ([spring-ai-mcp-gateway-1]) for this project. If you removed or renamed this service
+in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+[+] Running 0/1
+[+] Running 0/1 Creating
+[+] Running 0/1 Initializing model runner...
+[+] Running 1/2 Initializing model runner...
+ ✔ model_runner            Created                                    0.5s
+ ✔ model_runner            Created                                    0.5s
+[+] Running 2/2 0.5s
+ ✔ model_runner            Created                                    0.5s
+ ✔ Container spring-ai-app-1  Recreated                                0.4s
+Attaching to app-1, mcp-gateway-1
+mcp-gateway-1  | - Reading configuration...
+mcp-gateway-1  | - Reading catalog from https://desktop.docker.com/mcp/catalog/v2/catalog.yaml
+mcp-gateway-1  | - Configuration read in 38.004947ms
+mcp-gateway-1  | - Those servers are enabled: duckduckgo
+mcp-gateway-1  | - Using images:
+mcp-gateway-1  |   mcp/duckduckgo@sha256:68eb20db6109f5c312a695fc5ec3386ad15d93ffb765a0b4eb1baf4328dec14f
+mcp-gateway-1  | - Pulling images [mcp/duckduckgo]
+mcp-gateway-1  | > Images pulled in 22.43311ms
+mcp-gateway-1  | - Verifying images [mcp/duckduckgo]
+app-1          | 2025-06-26T21:21:31.041Z DEBUG 1 --- [mcp] [main] o.s.boot.ApplicationEnvironment       : Activating profiles [prod]
+
+app-1          |   .   ____          _            __ _ _
+app-1          |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+app-1          | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+app-1          |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+app-1          |   '  |____| .__|_| |_|_| |_\__, | / / / /
+app-1          |  =========|_|==============|___/=/_/_/_/
+app-1          |  :: Spring Boot ::                (v3.4.5)
+
+mcp-gateway-1  | > Images verified in 908.191658ms
+app-1          | 2025-06-26T21:21:31.106Z INFO 1 --- [mcp] [main] o.s.ai.mcp.samples.brave.Application  : Starting Application v0.0.1-SNAPSHOT using Java 17.0.15 with PID 1 (/app/app.jar started by root in /app)
+mcp-gateway-1  | - Listing MCP tools...
+mcp-gateway-1  | - Running server mcp/duckduckgo with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never --label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=duckduckgo --label docker-mcp-transport=stdio --network spring-ai_default]
+app-1          | 2025-06-26T21:21:31.107Z INFO 1 --- [mcp] [main] o.s.ai.mcp.samples.brave.Application  : The following 1 profile is active: "prod"
+app-1          | 2025-06-26T21:21:31.108Z DEBUG 1 --- [mcp] [main] o.s.boot.SpringApplication            : Loading source class org.springframework.ai.mcp.samples.brave.Application
+app-1          | 2025-06-26T21:21:31.969Z DEBUG 1 --- [mcp] [main] ...PropertyResolver$DefaultResolver   : Found key 'MODEL_RUNNER_URL' in PropertySource 'systemEnvironment' with value of type String
+app-1          | 2025-06-26T21:21:31.987Z DEBUG 1 --- [mcp] [main] ...PropertyResolver$DefaultResolver   : Found key 'MODEL_RUNNER_MODEL' in PropertySource 'systemEnvironment' with value of type String
+app-1          | 2025-06-26T21:21:32.010Z DEBUG 1 --- [mcp] [main] ...PropertyResolver$DefaultResolver   : Found key 'MCP_GATEWAY_URL' in PropertySource 'systemEnvironment' with value of type String
+app-1          | 2025-06-26T21:21:32.022Z DEBUG 1 --- [mcp] [main] o.s.b.a.AutoConfigurationPackages      : @EnableAutoConfiguration was declared on a class in the package 'org.springframework.ai.mcp.samples.brave'. Automatic @Repository and @Entity scanning is enabled.
+mcp-gateway-1  | > duckduckgo: [06/26/25 21:21:xx] INFO  Processing request of type ListToolsRequest            server.py:523
+mcp-gateway-1  | > duckduckgo: INFO  Processing request of type ListPromptsRequest             server.py:523
+mcp-gateway-1  | > duckduckgo: INFO  Processing request of type ListResourcesRequest           server.py:523
+mcp-gateway-1  | > duckduckgo: INFO  Processing request of type ListResourceTemplatesRequest    server.py:523
+mcp-gateway-1  | > duckduckgo: (2 tools)
+mcp-gateway-1  | > 2 tools listed in 1.133626053s
+mcp-gateway-1  | > Initialized in 2.105611173s
+mcp-gateway-1  | > Start sse server on port 8811
+
+...[Spring Boot autoconfiguration report: numerous "Did not match" / "Unconditional classes" entries, e.g.:]
+app-1          | XADataSourceAutoConfiguration:
+app-1          |   Did not match:
+app-1          |      - @ConditionalOnClass did not find required class 'jakarta.transaction.TransactionManager' (OnClassCondition)
+app-1          |   Exclusions: None
+app-1          |   Unconditional classes:
+app-1          |      - org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+app-1          |      - org.springframework.boot.autoconfigure.ssl.SslAutoConfiguration
+app-1          |      - org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+app-1          |      - org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+app-1          |      - org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+app-1          |      - org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+
+app-1          | 2025-06-26T21:21:32.860Z INFO 1 --- [mcp] [main] o.s.ai.mcp.samples.brave.Application  : Started Application in 2.13 seconds (process running for 2.525)
+app-1          | 2025-06-26T21:21:32.861Z DEBUG 1 --- [mcp] [main] o.s.b.a.ApplicationAvailabilityBean   : Application availability state LivenessState changed to CORRECT
+app-1          | 2025-06-26T21:21:32.867Z INFO 1 --- [mcp] [main] o.s.ai.mcp.samples.brave.Application  :
+QUESTION: "Does Spring AI supports the Model Context Protocol? Please provide some references."
+
+app-1          | 2025-06-26T21:21:32.970Z DEBUG 1 --- [mcp] [main] o.s.web.client.DefaultRestClient      : Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent="Does Spring AI supports the Model Context Protocol? Please provide some references.", role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null, annotations=null]], model=ai/gemma3-qat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=[org.springframework.ai.openai.api.OpenAiApi$FunctionTool@33188612, org.springframework.ai.openai.api.OpenAiApi$FunctionTool@4733f6f5], toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null, webSearchOptions=null]] as "application/json" with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+
+app-1          | 2025-06-26T21:21:34.128Z DEBUG 1 --- [mcp] [main] o.s.web.client.DefaultRestClient      : Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+mcp-gateway-1  | - Scanning tool call arguments for secrets...
+mcp-gateway-1  | > No secret found in arguments.
+mcp-gateway-1  | - Calling tool search with arguments: {"max_results":3,"query":"Spring AI Model Context Protocol references"}
+mcp-gateway-1  | - Running server mcp/duckduckgo with [run --rm -i --init --security-opt no-new-privileges --cpus 1 --memory 2Gb --pull never --label docker-mcp=true --label docker-mcp-tool-type=mcp --label docker-mcp-name=duckduckgo --label docker-mcp-transport=stdio --network spring-ai_default]
+mcp-gateway-1  | > duckduckgo: [06/26/25 21:21:34] INFO  Processing request of type CallToolRequest          server.py:523
+mcp-gateway-1  | > duckduckgo: [06/26/25 21:21:35] INFO  HTTP Request: POST                    _client.py:1740
+mcp-gateway-1  | > duckduckgo: https://html.duckduckgo.com/html "HTTP/1.1 200 OK"
+mcp-gateway-1  | > Calling tool search took: 1.49566373s
+mcp-gateway-1  | - Scanning tool call response for secrets...
+mcp-gateway-1  | > No secret found in response.
+
+app-1          | 2025-06-26T21:21:35.677Z DEBUG 1 --- [mcp] [main] o.s.web.client.DefaultRestClient      : Writing [ChatCompletionRequest[messages=[
+  ChatCompletionMessage[rawContent="Does Spring AI supports the Model Context Protocol? Please provide some references.", role=USER, ...],
+  ChatCompletionMessage[rawContent=null, role=ASSISTANT, toolCalls=[ToolCall[index=null, id=VYp1HrambSdyWzbafkasmjw0zfLbq8wK, type=function, function=ChatCompletionFunction[name=spring_ai_mcp_client_gateway_search, arguments={"query":"Spring AI Model Context Protocol references","max_results":3}]]], ...],
+  ChatCompletionMessage[rawContent=[{"text":"Found 3 search results:
+
+1. Model Context Protocol (MCP) :: Spring AI Reference
+   URL: https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html
+   Summary: The Model Context Protocol (MCP) is a standardized protocol that enables AI models to interact with external tools and resources in a structured way. It supports multiple transport mechanisms to provide flexibility across different environments.
+
+2. Model Context Protocol Client/Server with Spring AI
+   URL: https://shazinsadakath.medium.com/model-context-protocol-client-server-with-spring-ai-4da7aeeb17e4
+   Summary: The Model Context Protocol (MCP) is built on a flexible, extensible architecture that enables seamless communication between LLM applications and integrations. It uses a client-server architecture where; Hosts are LLM applications (like OpenAI Desktop Client, IDEs or Custom AI Apps) that initiate connections
+
+3. Exploring Model Context Protocol (MCP) With Spring AI
+   URL: https://www.baeldung.com/spring-ai-model-context-protocol-mcp
+   Summary: However, integrating and managing multiple data sources with different formats and protocols is a challenge. The Model Context Protocol (MCP), introduced by Anthropic, addresses this integration challenge and provides a standardized way to connect AI-powered applications with external data sources. Through MCP, we can build complex agents and ...
+"}], role=TOOL, name=spring_ai_mcp_client_gateway_search, toolCallId=VYp1HrambSdyWzbafkasmjw0zfLbq8wK, ...]
+], model=ai/gemma3-qat, ... temperature=0.7, ... stream=false, ...]] as "application/json" with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+
+app-1          | 2025-06-26T21:21:41.092Z DEBUG 1 --- [mcp] [main] o.s.web.client.DefaultRestClient      : Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+app-1          | 2025-06-26T21:21:41.094Z INFO 1 --- [mcp] [main] o.s.ai.mcp.samples.brave.Application  :
+ASSISTANT: Here are some references regarding Spring AI's support for the Model Context Protocol (MCP):
+
+1. **Model Context Protocol (MCP) :: Spring AI Reference:** [https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html) - This document provides an overview of MCP and its features within the Spring AI ecosystem.
+
+2. **Model Context Protocol Client/Server with Spring AI:** [https://shazinsadakath.medium.com/model-context-protocol-client-server-with-spring-ai-4da7aeeb17e4](https://shazinsadakath.medium.com/model-context-protocol-client-server-with-spring-ai-4da7aeeb17e4) - This blog post explains how to implement MCP with Spring AI, showcasing a client-server architecture.
+
+3. **Exploring Model Context Protocol (MCP) With Spring AI:** [https://www.baeldung.com/spring-ai-model-context-protocol-mcp](https://www.baeldung.com/spring-ai-model-context-protocol-mcp) - This article delves into the benefits of MCP and how it can be used to integrate AI applications with external data sources.
+
+app-1          | 2025-06-26T21:21:41.095Z DEBUG 1 --- [mcp] [main] o.s.b.a.ApplicationAvailabilityBean   : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+app-1 exited with code 0
+^CGracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 1/2
+ ✔ Container spring-ai-app-1          Stopped                                    0.0s
+[+] Stopping 2/2
+ ✔ Container spring-ai-mcp-gateway-1  Stopped                                    0.2s

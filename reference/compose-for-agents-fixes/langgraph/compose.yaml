@@ -1,0 +1,54 @@
+services:
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U user -d database]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+
+  importer:
+    build:
+      target: importer
+    environment:
+      SQLITE_FILE: /app/Chinook.db
+      DATABASE_URL: postgres://user:password@database:5432/database
+    volumes:
+      - ./Chinook.db:/app/Chinook.db
+    restart: on-failure
+    depends_on:
+      database:
+        condition: service_healthy
+
+  agent:
+    build:
+      target: agent
+    environment:
+      - MCP_SERVER_URL=http://mcp-gateway:8811/sse
+      - DATABASE_DIALECT=PostgreSQL
+      - QUESTION="Which sales agent made the most in sales in 2009?"
+    depends_on:
+      importer:
+        condition: service_completed_successfully
+      mcp-gateway:
+        condition: service_started
+
+  mcp-gateway:
+    image: docker/mcp-gateway:latest
+    use_api_socket: true
+    command:
+      - --transport=sse
+      - --allow-unauthenticated
+      - --config=/mcp-config.yaml
+      - --servers=database-server
+      - --tools=execute_sql,list_tables,describe_table
+    volumes:
+      - ./mcp-config.yaml:/mcp-config.yaml:ro
+    depends_on:
+      importer:
+        condition: service_completed_successfully

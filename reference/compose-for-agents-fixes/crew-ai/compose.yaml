@@ -1,0 +1,20 @@
+services:
+  agents:
+    build:
+      context: .
+    environment:
+      - MCP_SERVER_URL=http://mcp-gateway:8811/sse
+    restart: "no"
+    depends_on:
+      - mcp-gateway
+
+  mcp-gateway:
+    # mcp-gateway secures your MCP servers
+    image: docker/mcp-gateway:latest
+    use_api_socket: true
+    command:
+      - --transport=sse
+      - --allow-unauthenticated
+      # add any MCP servers you want to use
+      - --servers=duckduckgo
+      - --tools=search,fetch_content
