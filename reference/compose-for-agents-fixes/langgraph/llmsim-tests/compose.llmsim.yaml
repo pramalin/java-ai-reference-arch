@@ -1,0 +1,26 @@
+services:
+  agent:
+    models: !reset []
+    environment:
+      OPENAI_API_BASE_URL: http://llmsim:8089/v1
+      OPENAI_API_KEY: unused
+      OPENAI_MODEL_NAME: llmsim-demo
+      QUESTION: How many employees are in the system?
+    depends_on:
+      database:
+        condition: service_healthy
+      importer:
+        condition: service_completed_successfully
+      mcp-gateway:
+        condition: service_started
+      llmsim:
+        condition: service_started
+
+  llmsim:
+    build:
+      context: ./llmsim-tests/llmsim
+    environment:
+      LLMSIM_SCRIPT: com.example.langgraph.llmsim.LangGraphEmployeeCountFlow
+      LLMSIM_JOURNAL_MAX_ENTRIES: 100
+    ports:
+      - "${LLMSIM_PORT:-8089}:8089"
